@@ -114,17 +114,8 @@ $ids = $client->search('res.partner', [['email', '=', 'baz@quuz.com']], 0, 1);
 $client->unlink('res.partner', $ids);
 ```
 
-Get report in base64 format.
-
-```php
-$ids = $client->search('res.partner', [['customer', '=', true]], 0, 10);
-
-$report = $client->getReport('res.partner', $ids);
-```
-
 [1]: https://bitbucket.org/simbigo/openerp-api
 [2]: https://github.com/jacobsteringa/OdooClient
 
 # License
-
 MIT License. Copyright (c) 2017 Rob Roy.
