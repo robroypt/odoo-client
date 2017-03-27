@@ -1,6 +1,6 @@
 # OdooClient
 
-OdooClient is an Odoo client for PHP. It is inspired on [OpenERP API][1] from simbigo and [OdooClient][2] from jacobsteringa and uses a more or less similar API.
+OdooClient is an [Odoo][1] client for PHP. It is inspired on [OpenERP API][2] from simbigo and [OdooClient][3] from jacobsteringa and uses a more or less similar API.
 
 However, instead of its own XML-RPC client or the Zend XML-RPC libraries it uses the Ripcord RPC library -- this is the library used in the Odoo Web Service API documentation.
 
@@ -114,8 +114,9 @@ $ids = $client->search('res.partner', [['email', '=', 'baz@quuz.com']], 0, 1);
 $client->unlink('res.partner', $ids);
 ```
 
-[1]: https://bitbucket.org/simbigo/openerp-api
-[2]: https://github.com/jacobsteringa/OdooClient
+[1]: https://www.odoo.com/
+[2]: https://bitbucket.org/simbigo/openerp-api
+[3]: https://github.com/jacobsteringa/OdooClient
 
 # License
 MIT License. Copyright (c) 2017 Rob Roy.
