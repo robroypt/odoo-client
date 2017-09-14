@@ -111,7 +111,7 @@ class Client
 	 *
 	 * @return array Array of model id's
 	 */
-	public function search($model, $criteria, $offset = 0, $limit = 100)
+	public function search($model, $criteria, $offset = 0, $limit = 100, $order = '')
 	{
 		$response = $this->getClient('object')->execute_kw(
             $this->database,
@@ -120,7 +120,7 @@ class Client
             $model,
             'search',
             [$criteria],
-            ['offset'=>$offset, 'limit'=>$limit]
+            ['offset'=>$offset, 'limit'=>$limit, 'order' => $order]
         );
 
 		return $response;
@@ -183,7 +183,7 @@ class Client
 	 *
 	 * @return array An array of models
 	 */
-	public function search_read($model, $criteria, $fields = array(), $limit=100)
+	public function search_read($model, $criteria, $fields = array(), $limit=100, $order = '')
 	{
         $response = $this->getClient('object')->execute_kw(
             $this->database,
@@ -192,7 +192,7 @@ class Client
             $model,
             'search_read',
             [$criteria],
-            ['fields'=>$fields,'limit'=>$limit]
+            ['fields'=>$fields,'limit'=>$limit, 'order' => $order]
         );
 
 		return $response;
