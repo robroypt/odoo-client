@@ -225,12 +225,12 @@ class Client
 	 * Update model(s)
 	 *
 	 * @param string $model  Model
-	 * @param array  $id     Model id to update
+	 * @param array  $ids     Model ids to update
 	 * @param array  $fields A associative array (format: ['field' => 'value'])
 	 *
 	 * @return array
 	 */
-	public function write($model, $id, $fields)
+	public function write($model, $ids, $fields)
 	{
         $response = $this->getClient('object')->execute_kw(
             $this->database,
@@ -239,7 +239,7 @@ class Client
             $model,
             'write',
             [
-                 [$id],
+                 $ids,
                 $fields
             ]
         );
